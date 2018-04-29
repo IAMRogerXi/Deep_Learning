@@ -24,8 +24,7 @@ b = tf.Variable(tf.zeros([10]))
 y = tf.nn.softmax(tf.matmul(x, W) + b)
 
 # loss is cross entropy
-cross_entropy = tf.reduce_mean(
-                tf.nn.softmax_cross_entropy_with_logits(labels=y_, logits=y))
+cross_entropy = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y_, logits=y))
 
 # each training step in gradient decent we want to minimize cross entropy
 train_step = tf.train.GradientDescentOptimizer(0.5).minimize(cross_entropy)
